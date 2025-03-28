@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 1080px;
+    object-fit: contain; /* Garante que a imagem inteira seja visível sem cortes */
+    background-color: #000; /* Caso tenha bordas, elas serão pretas */
+}
+
+
+.image-item {
+    position: relative; /* Necessário para o formulário ficar posicionado sobre a imagem */
+    width: 100%;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #000;
+}
+
+
+.form-overlay {
+    position: absolute;
+    top: 0;
+    left: 70%; /* O formulário começa a partir de 70% da largura da imagem */
+    width: 20%; /* O formulário ocupa 30% da largura */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Margem à direita do formulário */
+}
+
+
+.image-item:hover .form-overlay {
+    opacity: 1; /* Exibe o formulário quando a imagem for passada com o mouse */
+    pointer-events: auto; /* Habilita a interação com o formulário */
+}
+
+form {
+    padding: 40px;
+    border-radius: 12px; /* Bordas levemente mais arredondadas */
+    width: 320px; /* Pequeno ajuste no tamanho */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
+}
+
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    background: #faf9f9;
+    color: rgb(0, 0, 0);
+}
+
+form input::placeholder {
+    color: #727171; /* Deixa o placeholder mais suave */
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e7e7e8;
+    background-color: transparent;
+    color: #c1c4c8;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgba(57, 57, 234, 0.8);
+    color: white;
+}
+
+form h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 766px) {
+    .img-1 {
+        content: url("./Imagem/6.jpg");
+    }
+    .img-2 {
+        content: url("./Imagem/7.jpg");
+    }
+    .img-3 {
+        content: url("./Imagem/8.jpg");
+    }
+    .img-4 {
+        content: url("./Imagem/9.jpg");
+    }
+    .img-5 {
+        content: url("./Imagem/10.jpg");
+    }
+
+
+    .form-overlay {
+        bottom: -300px; /* Move mais para baixo */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 240px; /* Reduz ainda mais a largura */
+        height: auto; /* Mantém altura ajustável */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Diminui ainda mais o espaço interno */
+        margin-top: 10px;
+    }
+    
+    form {
+        width: 100%;
+        padding: 15px; /* Diminui o preenchimento interno */
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    form h2 {
+        font-size: 16px; /* Diminui o tamanho do título */
+        margin-bottom: 10px;
+    }
+    
+    form input {
+        width: 100%;
+        padding: 6px; /* Reduz o tamanho dos inputs */
+        margin-bottom: 6px; /* Menos espaçamento entre campos */
+        font-size: 12px;
+    }
+    
+    form button {
+        padding: 6px; /* Botão menor */
+        font-size: 12px;
+    }
+    
+    
+    
+
+
+
+
+    
+    .video-overlay {
+        position: absolute;
+        top: 40%; /* Centraliza o vídeo verticalmente */
+        left: 50%; /* Centraliza o vídeo horizontalmente */
+        transform: translate(-50%, -100%); /* Ajuste fino para centralização exata */
+        width: 90%; /* Aumenta a largura para 90% do contêiner */
+        height: 80%; /* Ajusta a altura para 80% do contêiner */
+        display: flex;
+        justify-content: center; /* Alinha o vídeo horizontalmente */
+        align-items: center; /* Alinha o vídeo verticalmente */
+    }
+    
+    .video-overlay video {
+        width: 100%; /* O vídeo ocupa toda a largura do contêiner */
+        height: 100%; /* Ajusta a altura para preencher o contêiner */
+        object-fit: cover; /* Garante que o vídeo preencha o bloco sem distorcer */
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+.video-overlay {
+    position: absolute;
+    top: 310px; /* Adiciona uma margem de 10px no topo */
+    right: 0px; /* Adiciona uma margem de 10px à direita */
+    width: 40%; /* Reduz a largura do vídeo, pode ajustar conforme necessário */
+    height: 50%; /* Reduz a altura do vídeo, pode ajustar conforme necessário */
+}
+
+
+
+
+
+
+
+
+
+/* Estilo do botão */
+.btn-gradient-bg {
+    background: linear-gradient(45deg, #e92816, #ff4040); /* Gradiente */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Efeito hover do botão */
+.btn-gradient-bg-hover:hover {
+    background: linear-gradient(45deg, #f02828, #ff6f61); /* Alteração do gradiente ao passar o mouse */
+}
+
+/* Modal (inicialmente escondido) */
+.modal {
+    display: none; /* Esconde o modal */
+    position: fixed;
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Frase de boas-vindas abaixo do vídeo */
+.modal-message {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* Estilo do botão com ícone de play */
+.btn-gradient-bg {
+    background-color: #ff6f61; /* Cor de fundo do botão */
+    color: white; /* Cor do ícone de play */
+    border: none;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Garante que a animação de pulsação não ultrapasse o botão */
+}
+
+/* Efeito hover do botão */
+.btn-gradient-bg:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra no hover */
+}
+
+/* Ícone de play fixo */
+.play-icon {
+    font-size: 50px; /* Tamanho do ícone */
+    z-index: 2; /* Garante que o ícone de play fique acima da animação */
+}
+
+/* Animação de pulsação ao redor do botão */
+.btn-gradient-bg::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px; /* Tamanho inicial do círculo pulsante */
+    height: 120px;
+    background-color: rgba(255, 111, 97, 0.4); /* Cor do efeito */
+    border-radius: 50%; /* Deixa o efeito arredondado */
+    transform: translate(-50%, -50%); /* Centraliza o efeito */
+    animation: pulse 1.5s infinite ease-in-out; /* Animação do efeito */
+    z-index: 1; /* Coloca o círculo abaixo do ícone */
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) translate(-50%, -50%);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+    }
+}

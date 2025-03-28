@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Revendedor NFR</title>
+</head>
+<body>
+    <div class="gallery">
+        <div class="image-item">
+            <img class="img-1" src="./Imagem/1.jpg" alt="Imagem 1">
+            <div class="form-overlay">
+                <form action="#" method="POST">
+                    <h2>Cadastre-se</h2>
+                    <input type="text" id="name" name="name" placeholder="Nome" required pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços" />
+                    <input type="tel" id="phone" name="phone" placeholder="Telefone/WhatsApp" required pattern="\d{10,11}" inputmode="numeric" title="Digite um número de telefone válido (10 ou 11 dígitos)" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    <input type="email" id="email" name="email" placeholder="Email" required />
+                    <button type="submit">Quero ser Revendedor!</button>
+                </form>
+            </div>
+        </div>
+        <div class="image-item">
+            <img class="img-2" src="./Imagem/2.jpg" alt="Imagem 2">
+        </div>
+        <div class="image-item">
+            <img class="img-3" src="./Imagem/3.jpg" alt="Imagem 3">
+        </div>
+        <div class="image-item">
+            <img class="img-4" src="./Imagem/4.jpg" alt="Imagem 4">
+        </div>
+        <div class="image-item">
+            <img class="img-5" src="./Imagem/5.jpg" alt="Imagem 5">
+            
+            <!-- Vídeo local posicionado sobre a imagem -->
+            <div class="video-overlay">
+                <div class="video-player-wrapper">
+                    <!-- Botão com ícone de play animado -->
+                    <button class="btn-gradient-bg btn-gradient-bg-hover" id="openModalBtn">
+                        <i class="fas fa-play play-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Modal para vídeo -->
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <video class="video-player" controls>
+                    <source src="./Video/Nossa Nova localização.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <!-- Frase de boas-vindas abaixo do vídeo -->
+                <p class="modal-message">Seja bem-vindo! Este vídeo é apresentado por [Nome dos Donos]. Aproveite!</p>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+
+
+    <script>
+
+// Obtém os elementos necessários
+var modal = document.getElementById("videoModal");
+var btn = document.getElementById("openModalBtn");
+var span = document.getElementsByClassName("close-btn")[0];
+var video = document.querySelector(".video-player");
+
+// Quando o usuário clica no botão, abre o modal
+btn.onclick = function() {
+    modal.style.display = "block";
+    video.play(); // Começa a reprodução do vídeo quando o modal é aberto
+}
+
+// Quando o usuário clica no "X" do modal, fecha
+span.onclick = function() {
+    modal.style.display = "none";
+    video.pause(); // Pausa o vídeo quando o modal é fechado
+    video.currentTime = 0; // Reseta o vídeo para o início
+}
+
+// Quando o usuário clica fora do modal, ele também fecha
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        video.pause(); // Pausa o vídeo quando o modal é fechado
+        video.currentTime = 0; // Reseta o vídeo para o início
+    }
+}
+
+
+    </script>
+
+    
+</body>
+</html>
